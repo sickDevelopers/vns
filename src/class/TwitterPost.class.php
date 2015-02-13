@@ -47,7 +47,11 @@ class TwitterPost {
 			}
 		}
 
-		$this->_sign = $buffer;
+		$this->_sign .= $buffer;
 
+	}
+
+	public function reset_hashtags() {
+		$this->_sign = '';
 	}
 }
