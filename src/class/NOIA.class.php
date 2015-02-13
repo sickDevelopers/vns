@@ -18,7 +18,7 @@ class NOIA {
 		$result = $tweet->send( $lyrics );
 
 
-		while( $result['httpstatus'] != 200 && $attempts < $max_attempts ) {
+		while( $result->httpstatus != 200 && $attempts < $max_attempts ) {
 			$attempts++;
 			
 			list($lyrics, $album, $song) = $artist->getRandomLyrics();
@@ -28,6 +28,8 @@ class NOIA {
 
 			$result = $tweet->send( $lyrics );
 		}
+
+		var_dump( $result );
 
 	}
 
