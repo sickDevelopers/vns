@@ -7,3 +7,5 @@ define('OAUTH_SECRET', 'your_api_secret');
 
 define('ADMIN_SECRET', 'your_admin_token');
 define('ADMIN_TOKEN_SECRET', 'your_admin_token_secret');
+
+define('ARTIST_NAME', 'your_artist_name');

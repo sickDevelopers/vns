@@ -10,7 +10,7 @@ class NOIA {
 
 		$attempts = 0;
 
-		$artist = new Artist('verdena');
+		$artist = new Artist(ARTIST_NAME);
 		list($lyrics, $album, $song) = $artist->getRandomLyrics();
 
 		$tweet = new TwitterPost;
@@ -38,7 +38,7 @@ class NOIA {
 
 		echo "debug\n";
 
-		$artist = new Artist('verdena');
+		$artist = new Artist(ARTIST_NAME);
 		list($lyrics, $album, $song) = $artist->getRandomLyrics();
 
 		var_dump($lyrics);
