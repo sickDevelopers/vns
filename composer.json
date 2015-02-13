@@ -1,0 +1,7 @@
+{
+	"require" : {
+		"jublonet/codebird-php": "dev-master",
+		"phpunit/phpunit": "4.5.*",
+		"phpunit/php-invoker": "*"
+	}
+}
