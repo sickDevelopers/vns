@@ -13,12 +13,15 @@ if( isset($_GET['debug']) &&  $_GET['debug'] == 1 ) {
 	if(!defined('DEBUG')) {
 		define('DEBUG', 'true');
 	}
-	NOIA::go_debug();
+	NOIA::go_login_and_debug();
 	die();
 }
-if( isset($_GET['post']) &&  $_GET['post'] == 'yes' ) {
+if( isset($_GET['post']) && $_GET['post'] == 'yes' ) {
 	NOIA::go_alone_baby();
 	die();
+}
+if (isset($_GET['oauth_verifier']) && isset($_SESSION['oauth_verify'])) {
+	NOIA::go_login_and_debug();
 }
 
 
@@ -32,6 +35,10 @@ if( isset($argv) && count($argv) > 1 ) {
 	}
 	if( $argv[1] == '-p') {
 		NOIA::go_alone_baby();
+		die();
+	}
+	if( $argv[1] == '-l') {
+		NOIA::go_login_and_debug();
 		die();
 	}
 	if( $argv[1] == '-h') {

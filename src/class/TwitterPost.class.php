@@ -21,7 +21,7 @@ class TwitterPost {
 		\Codebird\Codebird::setConsumerKey(API_KEY, OAUTH_SECRET); // static, see 'Using multiple Codebird instances'
 		$cb = \Codebird\Codebird::getInstance();
 
-		$cb->setToken(ADMIN_SECRET, ADMIN_TOKEN_SECRET);
+		// $cb->setToken(ADMIN_SECRET, ADMIN_TOKEN_SECRET);
 
 		$params = array(
 		  'status' => $text . $this->_sign

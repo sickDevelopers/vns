@@ -50,4 +50,23 @@ class NOIA {
 
 	}
 
+
+	public static function go_login_and_debug() {
+
+		echo "debug\n";
+		if( Twitter::sign_in() ) {
+
+			$artist = new Artist(ARTIST_NAME);
+			list($lyrics, $album, $song) = $artist->getRandomLyrics();
+
+			$tweet = new TwitterPost;
+			$tweet->add_hashtags( $artist->_name, $album, $song );
+
+			$result = $tweet->send( $lyrics );
+
+			var_dump( $result );
+		}
+
+	}
+
 }
